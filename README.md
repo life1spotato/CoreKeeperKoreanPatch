@@ -2,7 +2,7 @@
 
 ## [최신 공지](https://gall.dcinside.com/corekeeper/1659) | [최신 릴리즈](https://github.com/life1spotato/CoreKeeperKoreanPatch/releases) 
 
-[![GitHub issues](https://img.shields.io/github/issues/life1spotato/CoreKeeperKoreanPatch?logo=GitHub)](https://github.com/life1spotato/CoreKeeperKoreanPatch/issues)
+[![GitHub issues](https://img.shields.io/github/issues/life1spotato/CoreKeeperKoreanPatch?logo=GitHub)](https://github.com/life1spotato/CoreKeeperKoreanPatch/issues) | [![](https://img.shields.io/discord/952788572887478282)](https://discord.gg/GJCn6JnQVc)
 
 ## 사용 툴
 
