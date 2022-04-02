@@ -2,33 +2,32 @@ import os
 import argparse
 
 import json
-from glob import glob
+
+from utils import yd, get_json
 
 def main(opt):
     dir, reuse = opt.dir, opt.reuse
 
-    thai_path = glob(os.path.join(dir, 'ThaiFont*.json'))[0]
-    prev_thai_path = thai_path + '_prev'
-    galmuri_path = glob(os.path.join(dir, 'Galmuri11*.json'))[0]
+    target_path = get_json(dir, yd.TargetLang['name'])
+    prev_target_path = target_path + '_prev'
+    source_path = get_json(dir, yd.FontData['name'])
 
-    with open(thai_path if not reuse else prev_thai_path, 'r') as f:
-        thai = json.load(f)
-    if not os.path.isfile(prev_thai_path):
-        with open(prev_thai_path, 'w') as f:
-            json.dump(thai, f)
-    with open(galmuri_path, 'r') as f:
-        galmuri = json.load(f)
+    with open(target_path if not reuse else prev_target_path, 'r') as f:
+        target = json.load(f)
+    if not os.path.isfile(prev_target_path):
+        with open(prev_target_path, 'w') as f:
+            json.dump(target, f)
+    with open(source_path, 'r') as f:
+        source = json.load(f)
 
-    print(len(thai['m_FontData']['Array']), len(galmuri.get('m_FontData')['Array']))
+    target['m_LineSpacing'] = yd.FontData['m_LineSpacing']
+    target['m_FontData'] = source.get('m_FontData')
+    target['m_Ascent'] = yd.FontData['m_Ascent']
+    target['m_Descent'] = yd.FontData['m_Descent']
+    target['m_FontRenderingMode'] = yd.FontData['m_FontRenderingMode']
 
-    thai['m_LineSpacing'] = 19.2
-    thai['m_FontData'] = galmuri.get('m_FontData')
-    thai['m_Ascent'] = 17.06
-    thai['m_Descent'] = -1.6
-    thai['m_FontRenderingMode'] = 2
-
-    with open(thai_path, 'w') as f:
-        json.dump(thai, f)
+    with open(target_path, 'w') as f:
+        json.dump(target, f)
 
 def parse_opt():
     parser = argparse.ArgumentParser(prog='mergefont.py')

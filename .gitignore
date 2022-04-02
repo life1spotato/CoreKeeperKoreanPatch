@@ -6,3 +6,4 @@ I2Languages*.json
 tsv/
 
 .DS_Store
+__pycache__

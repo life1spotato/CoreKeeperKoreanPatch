@@ -3,15 +3,16 @@ import argparse
 
 import pandas as pd
 import json
-from glob import glob
 from tqdm import tqdm
+
+from utils import yd, get_json
 
 def main(opt):
     ogv, ngv, kt, json_dir, tsv_dir, reuse = opt.ogv, opt.ngv, opt.kt, opt.jd, opt.td, opt.reuse
     
-    json_dir = glob(os.path.join(json_dir, 'I2Languages*.json'))[0]
+    json_dir = get_json(json_dir, 'I2Languages')
     prev_jsonpath = json_dir + '_prev'
-    korpath = os.path.join(tsv_dir, 'ck_kor_trans - v{}.tsv'.format(ogv))
+    korpath = os.path.join(tsv_dir, yd.KorTsvString.format(ogv))
 
     with open(json_dir if not reuse else prev_jsonpath, 'r') as f:
         jsondata = json.load(f)
@@ -21,15 +22,16 @@ def main(opt):
     kordata = pd.read_csv(korpath, sep='\t').T.values[1:4,:]
     kordata = {term:[enline, krline] for term, enline, krline in zip(*kordata)}
     
+    ti = yd.TargetLang['index']
     #### To activate langauge (activate: 0, deactivate: 1) ####
-    # jsondata['mSource']['mLanguages'][-1] = 0
+    # jsondata['mSource']['mLanguages'][ti] = 0
     
     for terms in tqdm(jsondata.get('mSource').get('mTerms')):
         if terms.get('Term') == 'EarlyAccess':
-            terms.get('Languages')[-1] = f'앞서해보기 v{ngv} 한국어화 A{kt}'
+            terms.get('Languages')[ti] = yd.EarlyAccessString.format(ngv, kt)
             continue
         kd = kordata[terms.get('Term')]
-        terms.get('Languages')[-1] = kd[1] if kd[1] != '' else kd[0]
+        terms.get('Languages')[ti] = kd[1] if kd[1] != '' else kd[0]
 
     with open(json_dir, 'w') as f:
         json.dump(jsondata, f)
