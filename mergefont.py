@@ -5,7 +5,7 @@ import json
 from glob import glob
 
 def main(opt):
-    dir, reuse = opt.dir, opt.re
+    dir, reuse = opt.dir, opt.reuse
 
     thai_path = glob(os.path.join(dir, 'ThaiFont*.json'))[0]
     prev_thai_path = thai_path + '_prev'
@@ -33,7 +33,7 @@ def main(opt):
 def parse_opt():
     parser = argparse.ArgumentParser(prog='mergefont.py')
     parser.add_argument('--dir', type=str, default='.', help='json file dir')
-    parser.add_argument('--re', '--use_prev', action='store_true', help='use prev json file')
+    parser.add_argument('--reuse', '--use_prev', action='store_true', help='use prev json file')
     opt = parser.parse_args()
     return opt
 

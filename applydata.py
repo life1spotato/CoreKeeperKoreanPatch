@@ -26,7 +26,8 @@ def main(opt):
     
     for terms in tqdm(jsondata.get('mSource').get('mTerms')):
         if terms.get('Term') == 'EarlyAccess':
-            terms.get('Languages')[-1] = f'\n앞서해보기 v{ngv} 한국어화 A{kt}\n\n'
+            terms.get('Languages')[-1] = f'앞서해보기 v{ngv} 한국어화 A{kt}'
+            continue
         kd = kordata[terms.get('Term')]
         terms.get('Languages')[-1] = kd[1] if kd[1] != '' else kd[0]
 
