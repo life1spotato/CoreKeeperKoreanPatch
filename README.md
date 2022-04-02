@@ -22,6 +22,10 @@ https://github.com/Perfare/Il2CppDumper
 
 ## 패치 과정
 
+### 파이썬 패키지 설치
+
+`pip install -r requirements.txt`
+
 ### 업데이트 확인
 
 1. `UABEAvalonia.exe` 실행

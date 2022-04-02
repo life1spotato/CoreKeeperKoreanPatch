@@ -2,12 +2,13 @@ import os
 import argparse
 
 import json
-from glob import glob
+
+from utils import yd, get_json
 
 def main(opt):
     dir, reuse = opt.dir, opt.reuse
 
-    mgr_path = glob(os.path.join(dir, 'TextManager*.json'))[0]
+    mgr_path = get_json(dir, 'TextManager')
     prev_mgr_path = mgr_path + '_prev'
 
     with open(mgr_path if not reuse else prev_mgr_path, 'r') as f:
@@ -16,9 +17,9 @@ def main(opt):
         with open(prev_mgr_path, 'w') as f:
             json.dump(mgr, f)
 
-    mgr['thaiFontSmallDynamic']['size'] = 0.75
-    mgr['thaiFontSmallDynamic']['lineSpacing'] = 1.05
-    mgr['thaiFontSmallDynamic']['letterSpacing'] = 0.1
+    mgr['thaiFontSmallDynamic']['size'] = yd.TextManagerData['thaiFontSmallDynamic']['size']
+    mgr['thaiFontSmallDynamic']['lineSpacing'] = yd.TextManagerData['thaiFontSmallDynamic']['lineSpacing']
+    mgr['thaiFontSmallDynamic']['letterSpacing'] = yd.TextManagerData['thaiFontSmallDynamic']['letterSpacing']
 
     with open(mgr_path, 'w') as f:
         json.dump(mgr, f)

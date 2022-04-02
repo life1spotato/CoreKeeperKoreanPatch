@@ -1,0 +1,19 @@
+TargetLang:
+    name: ThaiFont
+    index: -1
+    
+FontData:
+    name: "Galmuri11 font"
+    m_LineSpacing: 19.2
+    m_Ascent: 17.06
+    m_Descent: -1.6
+    m_FontRenderingMode: 2
+
+TextManagerData:
+    thaiFontSmallDynamic:
+        size: 0.75
+        lineSpacing: 1.05
+        letterSpacing: 0.1
+
+EarlyAccessString: "앞서해보기 v{} 한국어화 A{}"
+KorTsvString: "ck_kor_trans - v{}.tsv"
