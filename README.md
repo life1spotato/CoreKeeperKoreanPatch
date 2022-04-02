@@ -1,6 +1,6 @@
 ## Core Keeper 한국어화 / 한글패치
 
-## [최신 공지](https://gall.dcinside.com/corekeeper/400) | [최신 릴리즈](https://github.com/life1spotato/CoreKeeperKoreanPatch/releases) 
+## [최신 공지](https://gall.dcinside.com/corekeeper/1659) | [최신 릴리즈](https://github.com/life1spotato/CoreKeeperKoreanPatch/releases) 
 
 [![GitHub issues](https://img.shields.io/github/issues/life1spotato/CoreKeeperKoreanPatch?logo=GitHub)](https://github.com/life1spotato/CoreKeeperKoreanPatch/issues)
 
@@ -57,3 +57,4 @@ https://github.com/Perfare/Il2CppDumper
 
 ## 폰트 출처
 [갈무리 폰트](https://galmuri.quiple.dev/)
+
