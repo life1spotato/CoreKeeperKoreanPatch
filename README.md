@@ -48,7 +48,7 @@ https://github.com/Perfare/Il2CppDumper
 5. `UABEA` 로 `_resources.assets` 열기
 6. `I2Languages, ThaiFont, TextManager` json import
 7. `File → Save` `resources.assets` 저장
-8. `data.unity3d` 를 `_data.unity3d` 로 바꾸고 `File → Open` 열기
+8. `File → Open` `data.unity3d` 열기
 9. `Import → resources.assets`
 10. `File → Save` `_1data.unity3d` 저장
 11. `File → Open` `_1data.unity3d` 열기
