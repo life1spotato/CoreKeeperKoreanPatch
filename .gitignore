@@ -1,0 +1,8 @@
+TextManager*.json
+ThaiFont*.json
+I2Languages*.json
+*.json_prev
+
+tsv/
+
+.DS_Store
