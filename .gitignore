@@ -7,3 +7,5 @@ tsv/
 
 .DS_Store
 __pycache__
+
+credentials/
