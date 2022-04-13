@@ -12,17 +12,19 @@ def main(opt):
     older = pd.read_csv(ff.format(ov), sep='\t', index_col=0).T.to_dict('records')[0]
     newer = pd.read_csv(ff.format(nv), sep='\t', index_col=0).T.to_dict('records')[0]
 
-    updated = []
-    new = []
+    updated = {'key': [], 'element': []}
+    new = {'key': [], 'element': []}
     for nk in newer.keys():
         if older.get(nk):
             if older[nk] != newer[nk]:
-                updated.append({nk:newer[nk]})
+                updated['key'].append(nk)
+                updated['element'].append(newer[nk])
         else:
-            new.append({nk:newer[nk]})
+            new['key'].append(nk)
+            new['element'].append(newer[nk])
     
-    pd.DataFrame(updated).to_csv(ff.format(nv + '_updated'))
-    pd.DataFrame(new).to_csv(ff.format(nv + '_new'))
+    pd.DataFrame.from_dict(updated).to_csv(ff.format(nv + '_updated'), sep='\t')
+    pd.DataFrame.from_dict(new).to_csv(ff.format(nv + '_new'), sep='\t')
 
 def parse_opt():
     parser = argparse.ArgumentParser(prog='migration.py')
