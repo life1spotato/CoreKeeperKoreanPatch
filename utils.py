@@ -11,7 +11,7 @@ class YAMLDict:
     def __getattr__(self, name):
         return self.data.get(name)
 
-yd = YAMLDict()
+cfg = YAMLDict()
 
 def get_json(dir, name):
     return glob(os.path.join(dir, '{}*.json'.format(name)))[0]
