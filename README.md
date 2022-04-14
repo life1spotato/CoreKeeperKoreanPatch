@@ -2,8 +2,7 @@
 
 ## [최신 공지](https://gall.dcinside.com/corekeeper/1659) | [최신 릴리즈](https://github.com/life1spotato/CoreKeeperKoreanPatch/releases) 
 
-[![GitHub issues](https://img.shields.io/github/issues/life1spotato/CoreKeeperKoreanPatch?logo=GitHub)](https://github.com/life1spotato/CoreKeeperKoreanPatch/issues) | [![Discord](https://img.shields.io/discord/952788572887478282)](https://discord.gg/GJCn6JnQVc) | 
-[![voca](https://img.shields.io/badge/voca-0.3.7-brightgreen/url?url=https://docs.google.com/spreadsheets/d/1M9GctRU64iBa38kWmM3O6ECEZuxKcA2pKcwfkrtIYDg)](https://docs.google.com/spreadsheets/d/1M9GctRU64iBa38kWmM3O6ECEZuxKcA2pKcwfkrtIYDg)
+[![GitHub issues](https://img.shields.io/github/issues/life1spotato/CoreKeeperKoreanPatch?logo=GitHub)](https://github.com/life1spotato/CoreKeeperKoreanPatch/issues) | [![](https://img.shields.io/discord/952788572887478282)](https://discord.gg/GJCn6JnQVc)
 
 ## 사용 툴
 
@@ -35,7 +34,7 @@ https://github.com/Perfare/Il2CppDumper
 4. 알림창 `File → 파일로 압축 해제`, `Memory → 메모리에 압축 해제`
 5. `Core Keeper\CoreKeeper_Data\` 폴더에 `Export All`
 6. `resources.assets` 를 `_resources.assets` 로 이름 바꾸고 열기
-7. `ThaiFont, I2Languages`, `TextManager` 항목 `Export Dump` (raw = raw 데이터, dump = txt 또는 Json으로 dump)
+7. `I2Languages`, `ThaiFont`, `TextManager` 항목 `Export Dump` (raw = raw 데이터, dump = txt 또는 Json으로 dump)
 <br> &nbsp;7-1. 파일 형식 `UABEA json dump`로 지정해주어야 함.
 <br> &nbsp;7-2. `View → Search by name`에 이름 전체로 검색 (부분 검색 안됨)
 8. `python json2tsv.py --version {version} --dir {json file dir}`
@@ -51,14 +50,14 @@ https://github.com/Perfare/Il2CppDumper
 3. 텍스트 매니저 변환 `python cvttextmgr.py --dir {json file dir} [--reuse]`
 4. 번역 데이터 적용 `python applydata.py --ogv {old_game_version} --ngv {new_game_version} --kt {korean_tag} --jd {json_dir} --td {tsv_dir} [--reuse]`
 5. `UABEA` 로 `_resources.assets` 열기
-6. `ThaiFont, I2Languages, TextManager` json import
+6. `I2Languages, ThaiFont, TextManager` json import
 7. `File → Save` `resources.assets` 저장
 8. `File → Open` `data.unity3d` 열기
 9. `Import → resources.assets`
 10. `File → Save` `_1data.unity3d` 저장
 11. `File → Open` `_1data.unity3d` 열기
 12. `File → Compress` `data.unity3d` 을 `LZ4` 로 압축
-13. `data.unity3d` zip으로 압축하여 배포 (수분 소요됨)
+13. `data.unity3d` zip으로 압축하여 배포
 
 ## 폰트 출처
 [갈무리 폰트](https://galmuri.quiple.dev/)

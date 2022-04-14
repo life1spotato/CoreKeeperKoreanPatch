@@ -3,7 +3,7 @@ import argparse
 
 import json
 
-from utils import cfg, get_json
+from utils import yd, get_json
 
 def main(opt):
     dir, reuse = opt.dir, opt.reuse
@@ -17,7 +17,9 @@ def main(opt):
         with open(prev_mgr_path, 'w') as f:
             json.dump(mgr, f)
 
-    mgr['thaiFontSmallDynamic'].update(cfg.TextManagerData['thaiFontSmallDynamic'])
+    mgr['thaiFontSmallDynamic']['size'] = yd.TextManagerData['thaiFontSmallDynamic']['size']
+    mgr['thaiFontSmallDynamic']['lineSpacing'] = yd.TextManagerData['thaiFontSmallDynamic']['lineSpacing']
+    mgr['thaiFontSmallDynamic']['letterSpacing'] = yd.TextManagerData['thaiFontSmallDynamic']['letterSpacing']
 
     with open(mgr_path, 'w') as f:
         json.dump(mgr, f)
