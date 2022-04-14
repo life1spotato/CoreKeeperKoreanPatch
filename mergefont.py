@@ -3,14 +3,14 @@ import argparse
 
 import json
 
-from utils import yd, get_json
+from utils import cfg, get_json
 
 def main(opt):
     dir, reuse = opt.dir, opt.reuse
 
-    target_path = get_json(dir, yd.TargetLang['name'])
+    target_path = get_json(dir, cfg.TargetLang['name'])
     prev_target_path = target_path + '_prev'
-    source_path = get_json(dir, yd.FontData['name'])
+    source_path = get_json(dir, cfg.FontData['name'])
 
     with open(target_path if not reuse else prev_target_path, 'r') as f:
         target = json.load(f)
@@ -20,11 +20,11 @@ def main(opt):
     with open(source_path, 'r') as f:
         source = json.load(f)
 
-    target['m_LineSpacing'] = yd.FontData['m_LineSpacing']
+    target['m_LineSpacing'] = cfg.FontData['m_LineSpacing']
     target['m_FontData'] = source.get('m_FontData')
-    target['m_Ascent'] = yd.FontData['m_Ascent']
-    target['m_Descent'] = yd.FontData['m_Descent']
-    target['m_FontRenderingMode'] = yd.FontData['m_FontRenderingMode']
+    target['m_Ascent'] = cfg.FontData['m_Ascent']
+    target['m_Descent'] = cfg.FontData['m_Descent']
+    target['m_FontRenderingMode'] = cfg.FontData['m_FontRenderingMode']
 
     with open(target_path, 'w') as f:
         json.dump(target, f)
