@@ -1,9 +1,12 @@
 ## Core Keeper 한국어화 / 한글패치
 
-## [최신 공지](https://gall.dcinside.com/corekeeper/1659) | [최신 릴리즈](https://github.com/life1spotato/CoreKeeperKoreanPatch/releases) 
+- ### [최신 공지](https://gall.dcinside.com/corekeeper/1659)
 
-[![GitHub issues](https://img.shields.io/github/issues/life1spotato/CoreKeeperKoreanPatch?logo=GitHub)](https://github.com/life1spotato/CoreKeeperKoreanPatch/issues) | [![Discord](https://img.shields.io/discord/952788572887478282)](https://discord.gg/GJCn6JnQVc) | 
-[![voca](https://img.shields.io/badge/voca-0.3.7-brightgreen/url?url=https://docs.google.com/spreadsheets/d/1M9GctRU64iBa38kWmM3O6ECEZuxKcA2pKcwfkrtIYDg)](https://docs.google.com/spreadsheets/d/1M9GctRU64iBa38kWmM3O6ECEZuxKcA2pKcwfkrtIYDg)
+- ### [최신 릴리즈](https://github.com/life1spotato/CoreKeeperKoreanPatch/releases) 
+
+- ### 이슈 [![GitHub issues](https://img.shields.io/github/issues/life1spotato/CoreKeeperKoreanPatch?logo=GitHub)](https://github.com/life1spotato/CoreKeeperKoreanPatch/issues)
+- ### 디스코드 [![Discord](https://img.shields.io/discord/952788572887478282)](https://discord.gg/GJCn6JnQVc)
+- ### 공개 번역 시트 [![voca](https://img.shields.io/badge/voca-0.3.7-brightgreen/url?url=https://docs.google.com/spreadsheets/d/1M9GctRU64iBa38kWmM3O6ECEZuxKcA2pKcwfkrtIYDg)](https://docs.google.com/spreadsheets/d/1M9GctRU64iBa38kWmM3O6ECEZuxKcA2pKcwfkrtIYDg)
 
 ## 사용 툴
 
