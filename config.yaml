@@ -15,5 +15,5 @@ TextManagerData:
         lineSpacing: 1.05
         letterSpacing: 0.1
 
-EarlyAccessString: "앞서해보기 v{} 한국어화 A{}"
+EarlyAccessString: "앞서해보기 v{} 한국어화 v{}"
 KorTsvString: "ck_kor_trans - v{}.tsv"
