@@ -5,12 +5,14 @@ import json
 import pandas as pd
 from tqdm import tqdm
 
-from utils import get_json
+from utils import get_json_path
 
-def main(opt):
-    version, dir, save_dir = opt.version, opt.dir, opt.save_dir
-    
-    filepath = get_json(dir, 'I2Languages')
+def main(
+        v,
+        jd,
+        td
+    ):
+    filepath = get_json_path(jd, 'I2Languages')
     with open(filepath, 'r') as f:
         data = json.load(f)
     
@@ -22,16 +24,16 @@ def main(opt):
         element['Term'] = terms.get('Term')
         element['Languages'] = terms.get('Languages')[0].replace('\r','')
         dst.append(element)
-    pd.DataFrame(dst).to_csv(os.path.join(save_dir, f'v{version}.tsv'), index=False, sep='\t')
+    pd.DataFrame(dst).to_csv(os.path.join(td, f'v{v}.tsv'), index=False, sep='\t')
 
 def parse_opt():
     parser = argparse.ArgumentParser(prog='json2tsv.py')
-    parser.add_argument('--version', type=str, help='CK version')
-    parser.add_argument('--dir', type=str, default='.', help='json file dir')
-    parser.add_argument('--save_dir', type=str, default='.', help='tsv tile save dir')
+    parser.add_argument('--v', '--version', type=str, help='new CK version')
+    parser.add_argument('--jd', '--json_dir', type=str, default='./json', help='json file dir')
+    parser.add_argument('--td', '--tsv_dir', type=str, default='./tsv', help='tsv tile save dir')
     opt = parser.parse_args()
     return opt
 
 if __name__ == "__main__":
     opt = parse_opt()
-    main(opt)
+    main(**vars(opt))
