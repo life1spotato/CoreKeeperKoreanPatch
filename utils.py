@@ -13,5 +13,5 @@ class YAMLDict:
 
 cfg = YAMLDict()
 
-def get_json(dir, name):
+def get_json_path(dir, name):
     return glob(os.path.join(dir, '{}*.json'.format(name)))[0]

@@ -1,9 +1,9 @@
 TargetLang:
     name: ThaiFont
     index: -1
-    
+
+FontName: "Galmuri11 font"
 FontData:
-    name: "Galmuri11 font"
     m_LineSpacing: 19.2
     m_Ascent: 17.06
     m_Descent: -1.6
