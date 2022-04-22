@@ -20,7 +20,7 @@ def main(
     prev_json_path = json_path + '_prev'
     korpath = os.path.join(td, cfg.KorTsvString.format(vv))
 
-    with open(json_path if not reuse else prev_json_path, 'r') as f:
+    with open(json_path if not reuse else prev_json_path, 'r', encoding='UTF8') as f:
         jsondata = json.load(f)
     if not os.path.isfile(prev_json_path):
         with open(prev_json_path, 'w') as f:

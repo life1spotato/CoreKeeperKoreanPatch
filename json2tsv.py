@@ -13,7 +13,7 @@ def main(
         td
     ):
     filepath = get_json_path(jd, 'I2Languages')
-    with open(filepath, 'r') as f:
+    with open(filepath, 'r', encoding='UTF8') as f:
         data = json.load(f)
     
     src = data.get('mSource').get('mTerms')

@@ -3,6 +3,7 @@ ThaiFont*.json
 I2Languages*.json
 *.json_prev
 
+images/0.*.jpg
 tsv/
 
 .DS_Store

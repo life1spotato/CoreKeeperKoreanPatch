@@ -18,7 +18,7 @@ def main(
         with open(prev_mgr_path, 'w') as f:
             json.dump(mgr, f)
 
-    mgr.update(cfg.TextManagerData)
+    mgr['thaiFontSmallDynamic'].update(cfg.TextManagerData['thaiFontSmallDynamic'])
 
     with open(mgr_path, 'w') as f:
         json.dump(mgr, f)

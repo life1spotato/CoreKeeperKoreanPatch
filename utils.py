@@ -5,7 +5,7 @@ import yaml
 
 class YAMLDict:
     def __init__(self):
-        with open('config.yaml') as f:
+        with open('config.yaml', 'r', encoding='UTF8') as f:
             self.data = yaml.load(f, Loader=yaml.FullLoader)
 
     def __getattr__(self, name):
