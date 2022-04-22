@@ -3,11 +3,10 @@ ThaiFont*.json
 I2Languages*.json
 *.json_prev
 
+images/0.*.jpg
 tsv/
 
 .DS_Store
 __pycache__
 
 credentials/
-
-이용약관.md
