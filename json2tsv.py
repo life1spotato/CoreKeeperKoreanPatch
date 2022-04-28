@@ -5,13 +5,14 @@ import json
 import pandas as pd
 from tqdm import tqdm
 
-from utils import get_json_path
+from utils import get_json_path, cfg
 
 def main(
         v,
         jd,
         td
     ):
+    ff = os.path.join(td, cfg.EngTsvString)
     filepath = get_json_path(jd, 'I2Languages')
     with open(filepath, 'r', encoding='UTF8') as f:
         data = json.load(f)
@@ -24,7 +25,13 @@ def main(
         element['Term'] = terms.get('Term')
         element['Languages'] = terms.get('Languages')[0].replace('\r','')
         dst.append(element)
-    pd.DataFrame(dst).to_csv(os.path.join(td, f'v{v}.tsv'), index=False, sep='\t')
+    
+    td_path = ff.format(v)
+    if os.path.isfile(td_path):
+        print(f"tsv file of version {v} already exists.")
+        td_path = ff.format(v + '(2)')
+    print(f"save file to {td_path}.")
+    pd.DataFrame(dst).to_csv(td_path, index=False, sep='\t')
 
 def parse_opt():
     parser = argparse.ArgumentParser(prog='json2tsv.py')

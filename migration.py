@@ -3,15 +3,14 @@ import argparse
 
 import pandas as pd
 
-ff = 'v{}.tsv'
+from utils import cfg
 
 def main(
         ov,
         nv,
         td
     ):
-    global ff
-    ff = os.path.join(td, ff)
+    ff = os.path.join(td, cfg.EngTsvString)
     older = pd.read_csv(ff.format(ov), sep='\t', index_col=0).T.to_dict('records')[0]
     newer = pd.read_csv(ff.format(nv), sep='\t', index_col=0).T.to_dict('records')[0]
 

@@ -23,8 +23,8 @@
 7. `ThaiFont, I2Languages`, `TextManager` 항목 `Export Dump` (raw = raw 데이터, dump = txt 또는 Json으로 dump)
 <br> &nbsp;7-1. 파일 형식 `UABEA json dump`로 지정해주어야 함.
 <br> &nbsp;7-2. `View → Search by name`에 이름 전체로 검색 (부분 검색 안됨)
-8. `python json2tsv.py --version {version} --dir {json file dir}`
-9. `python migration.py --ov {old_version} --nv {new_version} --dir {tsv file dir}`
+8. `python json2tsv.py --v {version} --jd {json file dir} --td {tsv file dir}`
+9. `python migration.py --ov {old_version} --nv {new_version} --td {tsv file dir}`
 10. 과정 9 결과를 번역용 구글스프레드시트에 추가
 <br> &nbsp;10-1. `파일 → 가져오기 → new.tsv, update.tsv 선택 → '탭으로 구분' → 새 시트로 가져오기` (자동화 예정)
 <br> &nbsp;10-2. 알아서 잘 업데이트 (자동화 예정)
@@ -33,9 +33,9 @@
 
 ### 패치 제작
 1. 번역 다운로드 `버전 페이지 → 파일 → 다운로드 → 탭으로 구분된 값` (자동화 예정)
-2. 폰트 값 병합 `python mergefont.py --dir {json file dir} [--reuse]`
-3. 텍스트 매니저 변환 `python cvttextmgr.py --dir {json file dir} [--reuse]`
-4. 번역 데이터 적용 `python applydata.py --ogv {old_game_version} --ngv {new_game_version} --kt {korean_tag} --jd {json_dir} --td {tsv_dir} [--reuse]`
+2. 폰트 값 병합 `python mergefont.py --jd {json file dir} [--reuse]`
+3. 텍스트 매니저 변환 `python cvttextmgr.py --jd {json file dir} [--reuse]`
+4. 번역 데이터 적용 `python applydata.py --vv {voca_version} --gv {game_version} --kv {patch_version} --jd {json_dir} --td {tsv_dir} [--reuse]`
 5. `UABEA` 로 `_resources.assets` 열기
 6. `ThaiFont, I2Languages, TextManager` json import
 7. `File → Save` `resources.assets` 저장

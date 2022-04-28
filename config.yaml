@@ -17,3 +17,4 @@ TextManagerData:
 
 EarlyAccessString: "앞서해보기 v{} 한국어화 v{}"
 KorTsvString: "ck_kor_trans - v{}.tsv"
+EngTsvString: "v{}.tsv"
